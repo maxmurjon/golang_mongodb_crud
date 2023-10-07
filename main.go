@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
@@ -14,7 +15,7 @@ func main() {
 	r.GET("/user/:id", uc.GetUser)
 	r.POST("/user", uc.CreateUser)
 	r.DELETE("/user/:id", uc.DeleteUser)
-
+	fmt.Println("Server Running")
 	http.ListenAndServe(":9000", r)
 }
 
